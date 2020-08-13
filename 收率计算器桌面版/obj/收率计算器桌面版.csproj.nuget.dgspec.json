@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ztdey\\Desktop\\收率计算器桌面版\\收率计算器桌面版\\收率计算器桌面版.csproj": {}
+    "D:\\Code\\C#\\收率计算器桌面版\\收率计算器桌面版\\收率计算器桌面版.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ztdey\\Desktop\\收率计算器桌面版\\收率计算器桌面版\\收率计算器桌面版.csproj": {
+    "D:\\Code\\C#\\收率计算器桌面版\\收率计算器桌面版\\收率计算器桌面版.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ztdey\\Desktop\\收率计算器桌面版\\收率计算器桌面版\\收率计算器桌面版.csproj",
+        "projectUniqueName": "D:\\Code\\C#\\收率计算器桌面版\\收率计算器桌面版\\收率计算器桌面版.csproj",
         "projectName": "收率计算器桌面版",
-        "projectPath": "C:\\Users\\ztdey\\Desktop\\收率计算器桌面版\\收率计算器桌面版\\收率计算器桌面版.csproj",
+        "projectPath": "D:\\Code\\C#\\收率计算器桌面版\\收率计算器桌面版\\收率计算器桌面版.csproj",
         "packagesPath": "C:\\Users\\ztdey\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ztdey\\Desktop\\收率计算器桌面版\\收率计算器桌面版\\obj\\",
+        "outputPath": "D:\\Code\\C#\\收率计算器桌面版\\收率计算器桌面版\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ztdey\\AppData\\Roaming\\NuGet\\NuGet.Config",

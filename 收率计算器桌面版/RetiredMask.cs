@@ -39,7 +39,7 @@ namespace retiredmask
             this.retired_matereial_mass_perday = calculater_retired_material_perday(this.retired_mask_mass_total, this.day);
             this.retired_mask_amount_perday=this.calculate_retired_mask_amount_perday(this.retired_matereial_mass_perday, this.retired_mask_total_amount);
         }
-        public int calculate_mask_total_ammount(double material_amount)
+        public int calculate_mask_total_ammount(double material_amount)//计算物料总共可以生产多少口罩
         {
             double mask_total_amount_double = material_amount / 0.003;
             int mask_total_amount = (int)mask_total_amount_double;
@@ -47,14 +47,14 @@ namespace retiredmask
             return mask_total_amount;
         }
 
-        public int calculate_reitred_mask_amount(int mask_total_amount, int qualified_amount)
+        public int calculate_reitred_mask_amount(int mask_total_amount, int qualified_amount)//计算报废口罩的总数
         {
             int retired_mask_amount = mask_total_amount - qualified_amount;
             Console.WriteLine("本批报废口罩总数为：" + retired_mask_amount.ToString() + "只");
             return retired_mask_amount;
         }
 
-        public int[] calculater_qualified_mask_amount_perday(int qualified_mask_amount, int day)
+        public int[] calculater_qualified_mask_amount_perday(int qualified_mask_amount, int day)//计算日平均产量并通过随机算法生产日产量
         {
             //calculate average yield at first and creat a random number to creat the amount of mask yield perday
             int average_mask_yield = (int)(qualified_mask_amount / day);
@@ -80,7 +80,7 @@ namespace retiredmask
             return mask_array;
         }
 
-        public double[] calculate_qualified_mask_mass_perday(int[] mask_array)
+        public double[] calculate_qualified_mask_mass_perday(int[] mask_array)//计算日产的质量，并约分
         {
             ArrayList mass_list = new ArrayList();
             for (int index = 0; index < mask_array.Length; index++)
@@ -97,7 +97,7 @@ namespace retiredmask
             return mass_array;
         }
 
-        public double calculate_retired_material_total_amount(double total_material_amount, double[] mass_array)
+        public double calculate_retired_material_total_amount(double total_material_amount, double[] mass_array)//计算报废物料+不合格口罩质量
         {
             double qualified_mask_mass = 0;
             for (int index = 0; index < mass_array.Length; index++)
@@ -109,7 +109,7 @@ namespace retiredmask
             return retired_material_total_amount;
         }
 
-        public double calculater_retired_material_amount(double retired_material_total_amount)
+        public double calculater_retired_material_amount(double retired_material_total_amount)//计算报废物料质量
         {
             //for the experience there will be about 60 percent of total retired material become retied_material
             double retired_material = Math.Round((double)(retired_material_total_amount * 0.6), 1);
@@ -117,14 +117,14 @@ namespace retiredmask
             return retired_material;
         }
 
-        public double calculater_retired_maske_mass_amount(double retired_material_total_amount, double retired_material_mass)
+        public double calculater_retired_maske_mass_amount(double retired_material_total_amount, double retired_material_mass)//计算不合格口罩总质量
         {
             double retired_material = Math.Round((retired_material_total_amount - retired_material_mass), 1);
             Console.WriteLine("本批不合格口罩总质量为：" + retired_material.ToString() + "Kg");
             return retired_material;
         }
 
-        public double[] calculater_retired_material_perday(double retired_mask_material_total_amount, int day)
+        public double[] calculater_retired_material_perday(double retired_mask_material_total_amount, int day)//计算每日不合格口罩质量
         {
             ArrayList material_list = new ArrayList();
             double average = retired_mask_material_total_amount / day;
@@ -154,7 +154,7 @@ namespace retiredmask
             return material_array;
         }
 
-        int[] calculate_retired_mask_amount_perday(double[] material_array, int retired_mask_amount)
+        int[] calculate_retired_mask_amount_perday(double[] material_array, int retired_mask_amount)//计算每日不合格口罩数量
         {
             ArrayList retired_mask_amount_perday_list = new ArrayList();
             int amount = 0;
